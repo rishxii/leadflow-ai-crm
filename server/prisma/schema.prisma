@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("sales")
+  createdAt DateTime @default(now())
+
+  leads Lead[]
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  email     String?
+  phone     String?
+  status    String   @default("new")
+  source    String?
+  createdAt DateTime @default(now())
+
+  userId String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  notes Note[]
+
+  tasks Task[]
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  content   String
+
+  leadId    String
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model Task {
+  id          String   @id @default(cuid())
+
+  title       String
+
+  completed   Boolean  @default(false)
+
+  dueDate     DateTime?
+
+  createdAt   DateTime @default(now())
+
+  leadId       String
+
+  lead         Lead @relation(fields: [leadId],references: [id],onDelete: Cascade)
+}
