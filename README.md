@@ -27,20 +27,24 @@ LeadFlow.AI helps sales teams manage leads, track pipeline stages, organize cust
 # Tech Stack
 
 ## Frontend
+
 - Next.js
 - React.js
 - TypeScript
 - Tailwind CSS
 
 ## Backend
+
 - Node.js
 - Express.js
 - Prisma ORM
 
 ## Database
+
 - PostgreSQL
 
 ## AI
+
 - Ollama
 - TinyLlama / Mistral
 
@@ -58,19 +62,27 @@ PostgreSQL Database
 Ollama Local LLM
 ```
 
-# Screenshots
+## Screenshots
 
-## Dashboard
-(Add dashboard screenshot here)
+### Dashboard
 
-## Pipeline
-(Add pipeline screenshot here)
+![Dashboard](screenshots/dashboard.png)
 
-## AI Assistant
-(Add AI assistant screenshot here)
+### Sales Pipeline
 
-## Leads Management
-(Add leads page screenshot here)
+![Pipeline](screenshots/pipeline.png)
+
+### AI Assistant
+
+![AI Assistant](screenshots/assistant.png)
+
+### Leads Management
+
+![Leads](screenshots/leads.png)
+
+### Lead Details
+
+![Lead Detail](screenshots/lead-detail.png)
 
 ---
 
